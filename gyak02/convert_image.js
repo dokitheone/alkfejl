@@ -10,6 +10,7 @@ const db = new DataStore({
     autoload: true,
 });
 
+//piramid of doom, callback hell
 db.remove({}, { multi: true }, function (err, numRemoved) {
     fs.readdir(path, function (err, files) {
         if (err) throw err;
@@ -27,9 +28,9 @@ db.remove({}, { multi: true }, function (err, numRemoved) {
                         if (err) throw err;
 
                         console.log(fileName, 'atmeretezve es kiirva')
-                    })
-                })
-            })
+                    });
+                });
+            });
         });
     });
 });
